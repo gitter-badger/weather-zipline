@@ -1,3 +1,11 @@
+.flex {
+	display: flex;
+}
+.flex.center {
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
 .tile {
 	display: inline-block;
 	background-image: linear-gradient(rgba(240, 240, 240, 0.7), rgba(200, 200, 200, 0.6));
