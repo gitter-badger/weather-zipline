@@ -24,6 +24,7 @@
 	--cond-clear: url('https://static.pexels.com/photos/3590/nature-sky-sunny-clouds.jpg');
 	--cond-cloudy: url('https://upload.wikimedia.org/wikipedia/commons/8/81/Sky_over_Washington_Monument.JPG');
 	--cond-rain: url('https://upload.wikimedia.org/wikipedia/commons/e/e2/Rain_ot_ocean_beach.jpg');
+	--cond-ligntniing: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Cloud-to-ground_lightning2_-_NOAA.jpg/1280px-Cloud-to-ground_lightning2_-_NOAA.jpg');
 	--cond-snow: url('https://static.pexels.com/photos/6672/snow-forest-trees-winter.jpeg');
 }
 body {

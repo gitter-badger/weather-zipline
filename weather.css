@@ -7,6 +7,9 @@ body[data-cond="cloudy"] {
 body[data-cond="rain"] {
 	background-image: var(--cond-rain);
 }
+body[data-cond="lightning"] {
+	background-image: var(--cond-ligntniing);
+}
 body[data-cond="snow"] {
 	background-image: var(--cond-snow);
 }
