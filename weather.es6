@@ -113,6 +113,33 @@ class OpenWeatherMap {
 	}
 
 	/**
+	 * Converts degrees into direction
+	 *
+	 * @param  {Object} wind {deg: ..., }
+	 *
+	 * @return {string}      "N", "NE", etc...
+	 */
+	static getDirectionFromDegree(wind) {
+		if ((wind.deg >= 33.5) || (wind.deg <= 22.5)) {
+			return 'N';
+		} else if (wind.deg < 67.5) {
+			return 'NE';
+		} else if (wind.deg < 112.5) {
+			return 'E';
+		} else if (wind.deg < 157.5) {
+			return 'SE';
+		} else if (wind.deg < 202.5) {
+			return 'S';
+		} else if (wind.deg < 247.5) {
+			return 'SW';
+		} else if (wind.deg < 292.5) {
+			return 'W';
+		} else {
+			return 'NW';
+		}
+	}
+
+	/**
 	 * Parse response from fetch request
 	 *
 	 * @param  {Response} resp Reponse object from fetch
