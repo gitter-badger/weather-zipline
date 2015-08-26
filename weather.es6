@@ -7,9 +7,7 @@ class OpenWeatherMap {
 	 * Creates new instance and sets class properties
 	 *
 	 * @param  {string}                   imperial or metric
-	 *
 	 * @param  {string}                   language code
-	 *
 	 * @param  {float}                    API version number
 	 */
 	constructor(units = 'imperial', lang = 'en', version = 2.5) {

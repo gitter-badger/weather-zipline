@@ -5,9 +5,7 @@
 	 * Creates new instance and sets class properties
 	 *
 	 * @param  {string}                   imperial or metric
-	 *
 	 * @param  {string}                   language code
-	 *
 	 * @param  {float}                    API version number
 	 */function OpenWeatherMap(){var units=arguments.length <= 0 || arguments[0] === undefined?'imperial':arguments[0];var lang=arguments.length <= 1 || arguments[1] === undefined?'en':arguments[1];var version=arguments.length <= 2 || arguments[2] === undefined?2.5:arguments[2];_classCallCheck(this,OpenWeatherMap);this.url = new URL('http://api.openweathermap.org/data/' + version + '/weather');this.url.searchParams.set('units',units);this.url.searchParams.set('lang',lang);} /**
 	 * Get weather using GeoLocation API
