@@ -1,4 +1,8 @@
 main {
 	flex: 0 0 100%;
 	align-self: center;
+	transition: transform 800ms;
+}
+main:empty {
+	transform: scale(0);
 }
