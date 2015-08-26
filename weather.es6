@@ -91,6 +91,20 @@ class OpenWeatherMap {
 	}
 
 	/**
+	 * Get icon for current weather
+	 *
+	 * @param  {Object} weather An element from the weather array from response
+	 *
+	 * @return {Image}          <img src="..." alt="..." width="50" height="50">
+	 */
+	static getIcon(weather) {
+		let img = new Image(50, 50);
+		img.src = `http://openweathermap.org/img/w/${weather.icon}.png`;
+		img.alt = weather.description;
+		return img;
+	}
+
+	/**
 	 * Parse response from fetch request
 	 *
 	 * @param  {Response} resp Reponse object from fetch
