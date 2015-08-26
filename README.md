@@ -1,6 +1,6 @@
 [example]: http://codepen.io/AdventureBear/full/yNBJRj
 [zipline]: http://freecodecamp.com/challenges/zipline-show-the-local-weather
-[screenshot]: https://i.imgur.com/9fPHigw.jpg
+[screenshot]: https://i.imgur.com/R6IKGWc.jpg
 
 # [Zipline: Show the Local Weather][zipline]
 - Build a CodePen.io app that successfully reverse-engineers [this][example] ![Screen Shot][screenshot]
