@@ -14,6 +14,14 @@ class OpenWeatherMap {
 		this.url = new URL(`http://api.openweathermap.org/data/${version}/weather`);
 		this.url.searchParams.set('units', units);
 		this.url.searchParams.set('lang', lang);
+		this.units = {};
+		if (units === 'imperial') {
+			this.units.temp = 'F';
+			this.units.speed = 'MPH'
+		} else if (units === 'metric') {
+			this.units.temp = 'C';
+			this.untis.speed = 'K/H';
+		}
 	}
 
 	/**
