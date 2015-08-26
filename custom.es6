@@ -23,6 +23,10 @@ window.addEventListener('load', () => {
 		main.appendChild(city);
 		main.appendChild(sky);
 		main.appendChild(wind);
+		switch(data.weather[0].main.toLowerCase) {
+			default:
+				document.body.dataset.cond = 'clear';
+		}
 		console.dir(data);
 	});
 });
