@@ -2,6 +2,8 @@
 @import "viewport.css";
 @import "normalize.css";
 @import "header.css";
+@import "main.css";
+@import "footer.css";
 @import "class_rules.css";
 @import "weather.css";
 
@@ -33,4 +35,6 @@ body {
 	min-height: 100vh;
 	background-size: cover;
 	background-position: center;
+	display: flex;
+	flex-wrap: wrap;
 }

@@ -1,4 +1,6 @@
 header {
+	flex: 0 0 100%;
+	align-self: flex-start;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
