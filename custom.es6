@@ -1,10 +1,10 @@
-window.addEventListener('load', () => {
-	if (!localStorage.hasOwnProperty('units')) {
-		localStorage.setItem('units', 'imperial');
-	}
+function updateWeather() {
 	var weather = new OpenWeatherMap(localStorage.getItem('units'));
+	var main = document.querySelector('main');
+	while (main.hasChildNodes()) {
+		main.firstChild.remove();
+	}
 	weather.getFromCoords(data => {
-		var main = document.querySelector('main');
 		var city = document.createElement('div');
 		var temp = document.createElement('div');
 		var sky = document.createElement('div');
@@ -29,4 +29,23 @@ window.addEventListener('load', () => {
 		}
 		console.dir(data);
 	});
+}
+
+window.addEventListener('load', () => {
+	if (!localStorage.hasOwnProperty('units')) {
+		localStorage.setItem('units', 'imperial');
+	}
+	document.getElementById('switch-units').addEventListener('click', event => {
+		switch (localStorage.getItem('units')) {
+			case 'imperial':
+				localStorage.setItem('units', 'metric');
+				break;
+
+			case 'metric':
+				localStorage.setItem('units', 'imperial');
+				break;
+		}
+		updateWeather();
+	});
+	updateWeather();
 });
