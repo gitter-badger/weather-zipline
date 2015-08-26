@@ -15,13 +15,14 @@ window.addEventListener('load', () => {
 		city.appendChild(document.createTextNode(data.name));
 		sky.appendChild(document.createTextNode(`Sky is ${data.weather[0].main}`));
 		wind.appendChild(document.createTextNode(`${dir} ${data.wind.speed} ${weather.units.speed}`));
+		temp.classList.add('temp');
+		[city, sky, wind].forEach(el => {
+			el.classList.add('tile');
+		});
 		main.appendChild(temp);
 		main.appendChild(city);
 		main.appendChild(sky);
 		main.appendChild(wind);
-		[city, sky, wind].forEach(el => {
-			el.classList.add('tile');
-		})
 		console.dir(data);
 	});
 });
