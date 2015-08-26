@@ -1,3 +1,6 @@
 window.addEventListener('load', () => {
-	new OpenWeatherMap();
+	if (!localStorage.hasOwnProperty('units')) {
+		localStorage.setItem('units', 'imperial');
+	}
+	new OpenWeatherMap(localStorage.getItem('units'));
 });
