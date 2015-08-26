@@ -13,8 +13,8 @@ window.addEventListener('load', () => {
 		temp.appendChild(OpenWeatherMap.getIcon(data.weather[0]));
 		temp.appendChild(document.createTextNode(`${data.main.temp.toFixed(1)}°${weather.units.temp}`));
 		city.appendChild(document.createTextNode(data.name));
-		sky.appendChild(document.createTextNode(`Current conditions: ${data.weather[0].description}`));
-		wind.appendChild(document.createTextNode(`${data.wind.speed}${weather.units.speed} ${dir}`));
+		sky.appendChild(document.createTextNode(`Sky is ${data.weather[0].main}`));
+		wind.appendChild(document.createTextNode(`${dir} ${data.wind.speed} ${weather.units.speed}`));
 		main.appendChild(temp);
 		main.appendChild(city);
 		main.appendChild(sky);
