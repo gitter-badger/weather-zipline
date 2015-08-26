@@ -10,23 +10,24 @@ function updateWeather() {
 		var sky = document.createElement('div');
 		var wind = document.createElement('div');
 		var dir = OpenWeatherMap.getDirectionFromDegree(data.wind);
+		var container = document.createElement('div');
 		temp.appendChild(OpenWeatherMap.getIcon(data.weather[0]));
 		temp.appendChild(document.createTextNode(`${data.main.temp.toFixed(1)}°${weather.units.temp}`));
 		city.appendChild(document.createTextNode(data.name));
 		sky.appendChild(document.createTextNode(`Sky is ${data.weather[0].main}`));
 		wind.appendChild(document.createTextNode(`${dir} ${data.wind.speed} ${weather.units.speed}`));
 		temp.classList.add('temp');
+		temp.classList.add('flex');
+		temp.classList.add('center');
+		container.classList.add('flex');
+		container.classList.add('center');
 		[city, sky, wind].forEach(el => {
 			el.classList.add('tile');
+			container.appendChild(el);
 		});
 		main.appendChild(temp);
-		main.appendChild(city);
-		main.appendChild(sky);
-		main.appendChild(wind);
-		switch(data.weather[0].main.toLowerCase) {
-			default:
-				document.body.dataset.cond = 'clear';
-		}
+		main.appendChild(container);
+		document.body.dataset.cond = data.weather[0].main.toLowerCase();
 		console.dir(data);
 	});
 }
