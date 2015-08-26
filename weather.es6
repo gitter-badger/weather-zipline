@@ -4,14 +4,19 @@
  */
 class OpenWeatherMap {
 	constructor(units = 'imperial', version = 2.5) {
-		let system = units === 'imperial' ? 'F' : 'C';
-		let url = new URL(`http://api.openweathermap.org/data/${version}/weather`);
+		this.units = units;
+		this.version = version;
+	}
+
+	getFromCoords(callback) {
+		let system = this.units === 'imperial' ? 'F' : 'C';
+		let url = new URL(`http://api.openweathermap.org/data/${this.version}/weather`);
 		let headers = new Headers();
 		OpenWeatherMap.getLocation().then(location => {
 			console.log(location);
 			url.searchParams.set('lat', location.coords.latitude);
 			url.searchParams.set('lon', location.coords.longitude);
-			url.searchParams.set('units', units);
+			url.searchParams.set('units', this.units);
 			fetch(url, {
 				method: 'GET',
 				mode: 'cors',
