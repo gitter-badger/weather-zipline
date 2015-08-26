@@ -6,7 +6,7 @@ class OpenWeatherMap {
 	constructor(version = 2.5) {
 		let url = new URL(`http://api.openweathermap.org/data/${version}/weather`);
 		let headers = new Headers();
-		this.getLocation().then(location => {
+		OpenWeatherMap.getLocation().then(location => {
 			console.log(location);
 			url.searchParams.set('lat', location.coords.latitude);
 			url.searchParams.set('lon', location.coords.longitude);
@@ -71,7 +71,7 @@ class OpenWeatherMap {
 		}
 	}
 
-	getLocation(options = {}) {
+	static getLocation(options = {}) {
 		return new Promise(function(success, fail) {
 			if (!('geolocation' in navigator)) {
 				fail('Your browser does not support GeoLocation');
