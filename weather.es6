@@ -27,15 +27,12 @@ class OpenWeatherMap {
 				}
 			}).then(data => {
 				let main = document.querySelector('main');
-				let city = document.createElement('h2');
-				let pre = document.createElement('pre');
+				let city = document.createElement('h3');
 				let temp = document.createElement('samp');
 				temp.textContent = `Current temperature: ${OpenWeatherMap.getTemp(data.main.temp).toFixed(1)}°`;
 				city.textContent = `Current weather in ${data.name}`;
-				pre.textContent = JSON.stringify(data);
 				main.appendChild(city);
 				main.appendChild(temp);
-				main.appendChild(pre);
 				console.dir(data);
 			});
 		}).catch(err => console.error(err));
