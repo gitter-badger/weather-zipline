@@ -66,39 +66,6 @@ class OpenWeatherMap {
 		}
 	}
 
-	static getTemp(temp, to = 'Fahrenheit', from = 'Kelvin') {
-		if (from === to) {
-			return temp;
-		} else {
-			switch(to) {
-				case 'Fahrenheit':
-					switch(from) {
-						case 'Kelvin':
-							return (temp - 273.15) * 1.8 + 32;
-
-						case 'Celsius':
-							return temp * 1.8 + 32;
-					}
-				case 'Celsius':
-					switch(from) {
-						case 'Fahrenheit':
-							return (temp - 32) / 1.8;
-
-						case 'Kelvin':
-							return temp + 273.15;
-					}
-				case 'Kelvin':
-					switch(from) {
-						case 'Fahrenheit':
-							return (temp - 32) / 1.8 + 273.15;
-
-						case 'Celsius':
-							return temp + 273.15;
-					}
-			}
-		}
-	}
-
 	static getLocation(options = {}) {
 		return new Promise(function(success, fail) {
 			if (!('geolocation' in navigator)) {
