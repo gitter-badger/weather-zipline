@@ -3,46 +3,67 @@
  * @see http://openweathermap.org/current
  */
 class OpenWeatherMap {
-	constructor(units = 'imperial', version = 2.5) {
+	constructor(units = 'imperial', lang = 'en', version = 2.5) {
 		this.units = units;
-		this.version = version;
+		this.url = new URL(`http://api.openweathermap.org/data/${version}/weather`);
+		this.url.searchParams.set('units', units);
+		this.url.searchParams.set('lang', lang);
 	}
 
-	getFromCoords(callback) {
-		let system = this.units === 'imperial' ? 'F' : 'C';
-		let url = new URL(`http://api.openweathermap.org/data/${this.version}/weather`);
-		let headers = new Headers();
+	getFromCoords(callback = data => {console.log(data)}) {
 		OpenWeatherMap.getLocation().then(location => {
-			console.log(location);
-			url.searchParams.set('lat', location.coords.latitude);
-			url.searchParams.set('lon', location.coords.longitude);
-			url.searchParams.set('units', this.units);
-			fetch(url, {
+			this.url.searchParams.set('lat', location.coords.latitude);
+			this.url.searchParams.set('lon', location.coords.longitude);
+			fetch(this.url, {
 				method: 'GET',
-				mode: 'cors',
-				headers
-			}).then(resp => {
-				if (resp.ok) {
-					let type = resp.headers.get('Content-Type').toLowerCase();
-					if (type.startsWith('application/json')) {
-						return resp.json();
-					} else {
-						throw new Error(`Unsupported Content-Type: ${type}`);
-					}
-				} else {
-					throw new Error(`${resp.status}: ${resp.statusText}`);
-				}
-			}).then(data => {
-				let main = document.querySelector('main');
-				let city = document.createElement('h3');
-				let temp = document.createElement('samp');
-				temp.textContent = `Current temperature: ${data.main.temp.toFixed(1)}°${system}`;
-				city.textContent = `Current weather in ${data.name}`;
-				main.appendChild(city);
-				main.appendChild(temp);
-				console.dir(data);
-			});
-		}).catch(err => console.error(err));
+				mode: 'cors'
+			}).then(resp =>  this.parseResponse(resp)).then(callback);
+		}).catch(err => {
+			console.error(err);
+		});
+	}
+
+	getFromCity(city, callback = data => console.log(data)) {
+		this.url.searchParams.set('q', city);
+		fetch(this.url, {
+			method: 'GET',
+			mode: 'cors'
+		}).then(resp =>  this.parseResponse(resp)).then(callback).catch(err => {
+			console.error(err);
+		});
+	}
+
+	getFromZip(zip, callback = data => console.log(data)) {
+		this.url.searchParams.set('zip', `${zip},us`);
+		fetch(this.url, {
+			method: 'GET',
+			mode: 'cors'
+		}).then(resp =>  this.parseResponse(resp)).then(callback).catch(err => {
+			console.error(err);
+		});
+	}
+
+	getFromID(id, callback = data => console.log(data)) {
+		this.url.searchParams.set('id', id);
+		fetch(this.url, {
+			method: 'GET',
+			mode: 'cors'
+		}).then(resp =>  this.parseResponse(resp)).then(callback).catch(err => {
+			console.error(err);
+		});
+	}
+
+	parseResponse(resp) {
+		if (resp.ok) {
+			let type = resp.headers.get('Content-Type').toLowerCase();
+			if (type.startsWith('application/json')) {
+				return resp.json();
+			} else {
+				throw new Error(`Unsupported Content-Type: ${type}`);
+			}
+		} else {
+			throw new Error(`${resp.status}: ${resp.statusText}`);
+		}
 	}
 
 	static getTemp(temp, to = 'Fahrenheit', from = 'Kelvin') {
