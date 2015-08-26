@@ -6,3 +6,6 @@
 	box-shadow: 0.3em 0.3em 0.3em black;
 	border-radius: 0.4em;
 }
+.temp {
+	color: var(--color-alt);
+}
