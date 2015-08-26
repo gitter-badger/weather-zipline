@@ -19,6 +19,9 @@ window.addEventListener('load', () => {
 		main.appendChild(city);
 		main.appendChild(sky);
 		main.appendChild(wind);
+		[city, sky, wind].forEach(el => {
+			el.classList.add('tile');
+		})
 		console.dir(data);
 	});
 });
