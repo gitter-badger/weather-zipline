@@ -10,11 +10,11 @@ window.addEventListener('load', () => {
 		var sky = document.createElement('div');
 		var wind = document.createElement('div');
 		var dir = OpenWeatherMap.getDirectionFromDegree(data.wind);
-		temp.textContent = `${data.main.temp.toFixed(1)}°${weather.units.temp}`;
-		city.textContent = data.name;
-		sky.textContent = `Current conditions: ${data.weather[0].description}`;
-		wind.textContent = `${data.wind.speed}${weather.units.speed} ${dir}`;
 		temp.appendChild(OpenWeatherMap.getIcon(data.weather[0]));
+		temp.appendChild(document.createTextNode(`${data.main.temp.toFixed(1)}°${weather.units.temp}`));
+		city.appendChild(document.createTextNode(data.name));
+		sky.appendChild(document.createTextNode(`Current conditions: ${data.weather[0].description}`));
+		wind.appendChild(document.createTextNode(`${data.wind.speed}${weather.units.speed} ${dir}`));
 		main.appendChild(temp);
 		main.appendChild(city);
 		main.appendChild(sky);
