@@ -17,7 +17,7 @@ class OpenWeatherMap {
 		this.units = {};
 		if (units === 'imperial') {
 			this.units.temp = 'F';
-			this.units.speed = 'MPH'
+			this.units.speed = 'MPH';
 		} else if (units === 'metric') {
 			this.units.temp = 'C';
 			this.units.speed = 'K/H';
@@ -31,14 +31,14 @@ class OpenWeatherMap {
 	 *
 	 * @return {void}
 	 */
-	getFromCoords(callback = data => {console.log(data)}) {
+	getFromCoords(callback = data => console.log(data)) {
 		OpenWeatherMap.getLocation().then(location => {
 			this.url.searchParams.set('lat', location.coords.latitude);
 			this.url.searchParams.set('lon', location.coords.longitude);
 			fetch(this.url, {
 				method: 'GET',
 				mode: 'cors'
-			}).then(resp =>  this.parseResponse(resp)).then(callback);
+			}).then(resp => this.parseResponse(resp)).then(callback);
 		}).catch(err => {
 			console.error(err);
 		});
@@ -57,7 +57,7 @@ class OpenWeatherMap {
 		fetch(this.url, {
 			method: 'GET',
 			mode: 'cors'
-		}).then(resp =>  this.parseResponse(resp)).then(callback).catch(err => {
+		}).then(resp => this.parseResponse(resp)).then(callback).catch(err => {
 			console.error(err);
 		});
 	}
@@ -75,7 +75,7 @@ class OpenWeatherMap {
 		fetch(this.url, {
 			method: 'GET',
 			mode: 'cors'
-		}).then(resp =>  this.parseResponse(resp)).then(callback).catch(err => {
+		}).then(resp => this.parseResponse(resp)).then(callback).catch(err => {
 			console.error(err);
 		});
 	}
@@ -93,7 +93,7 @@ class OpenWeatherMap {
 		fetch(this.url, {
 			method: 'GET',
 			mode: 'cors'
-		}).then(resp =>  this.parseResponse(resp)).then(callback).catch(err => {
+		}).then(resp => this.parseResponse(resp)).then(callback).catch(err => {
 			console.error(err);
 		});
 	}
