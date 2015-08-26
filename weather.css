@@ -1,0 +1,12 @@
+body[data-cond="clear"] {
+	background-image: var(--cond-clear);
+}
+body[data-cond="cloudy"] {
+	background-image: var(--cond-cloudy);
+}
+body[data-cond="rain"] {
+	background-image: var(--cond-rain);
+}
+body[data-cond="snow"] {
+	background-image: var(--cond-snow);
+}

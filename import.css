@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@import "viewport.css";
+@import "normalize.css";
+@import "header.css";
+@import "class_rules.css";
+@import "weather.css";
+
+@media screen and (min-width:1000px) {
+	:root {
+		font-size: 1.3vw;
+	}
+}
+@media screen and (max-width:999px) and (min-width:500px) {
+	:root {
+		font-size: 2vw;
+	}
+}
+@media screen and (max-width: 499px) {
+	:root {
+		font-size: 3vw;
+	}
+}
+:root {
+	--cond-clear: url('https://static.pexels.com/photos/3590/nature-sky-sunny-clouds.jpg');
+	--cond-cloudy: ur('https://upload.wikimedia.org/wikipedia/commons/8/81/Sky_over_Washington_Monument.JPG');
+	--cond-rain: url('https://upload.wikimedia.org/wikipedia/commons/e/e2/Rain_ot_ocean_beach.jpg');
+	--cond-snow: url('https://static.pexels.com/photos/6672/snow-forest-trees-winter.jpeg');
+}
+body {
+	min-height: 100vh;
+	background-size: cover;
+	background-position: center;
+}
