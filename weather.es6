@@ -3,13 +3,15 @@
  * @see http://openweathermap.org/current
  */
 class OpenWeatherMap {
-	constructor(version = 2.5) {
+	constructor(units = 'imperial', version = 2.5) {
+		let system = units === 'imperial' ? 'F' : 'C';
 		let url = new URL(`http://api.openweathermap.org/data/${version}/weather`);
 		let headers = new Headers();
 		OpenWeatherMap.getLocation().then(location => {
 			console.log(location);
 			url.searchParams.set('lat', location.coords.latitude);
 			url.searchParams.set('lon', location.coords.longitude);
+			url.searchParams.set('units', units);
 			fetch(url, {
 				method: 'GET',
 				mode: 'cors',
@@ -29,7 +31,7 @@ class OpenWeatherMap {
 				let main = document.querySelector('main');
 				let city = document.createElement('h3');
 				let temp = document.createElement('samp');
-				temp.textContent = `Current temperature: ${OpenWeatherMap.getTemp(data.main.temp).toFixed(1)}°`;
+				temp.textContent = `Current temperature: ${data.main.temp.toFixed(1)}°${system}`;
 				city.textContent = `Current weather in ${data.name}`;
 				main.appendChild(city);
 				main.appendChild(temp);
