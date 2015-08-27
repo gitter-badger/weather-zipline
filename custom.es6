@@ -34,7 +34,6 @@ function updateWeather() {
 		main.appendChild(temp);
 		main.appendChild(container);
 		document.body.dataset.cond = data.weather[0].main.toLowerCase();
-		console.dir(data);
 	});
 }
 
