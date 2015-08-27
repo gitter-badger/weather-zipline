@@ -20,20 +20,21 @@
 .temp {
 	color: var(--color-alt);
 }
-.toggle:first-of-type {
-	border-radius: 0.5rem 0 0 0.5rem;
-	margin-right: -0.17em;
-}
-.toggle:last-of-type {
-	border-radius: 0 0.5rem 0.5rem 0;
-}
 .toggle {
 	display: inline-block;
+	width: 8em;
 	padding: 0.3rem;
 	border: 0.1em outset #333;
 	background-image: linear-gradient(#C6C2C2, #838383);
 	text-shadow: 0.05em 0.05em 0.1em black;
 	transition: box-shadow 100ms;
+}
+.toggle:first-of-type {
+	border-radius: 0.5em 0 0 0.5em;
+	margin-right: -0.3em;
+}
+.toggle:last-of-type {
+	border-radius: 0 0.5em 0.5em 0;
 }
 .toggle:disabled {
 	background-image: linear-gradient(#AEAEAE, #686868);
