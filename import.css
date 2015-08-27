@@ -6,6 +6,7 @@
 @import "footer.css";
 @import "class_rules.css";
 @import "weather.css";
+@import "https://fonts.googleapis.com/css?family=Acme|Ubuntu";
 
 @media screen and (min-width:1000px) {
 	:root {
@@ -23,7 +24,7 @@
 	}
 }
 :root {
-	--color-primary: #FADC0E;
+	--color-primary: #C9CEA8;
 	--color-alt: #FA890E;
 	--cond-clear: url('https://static.pexels.com/photos/3590/nature-sky-sunny-clouds.jpg');
 	--cond-cloudy: url('https://upload.wikimedia.org/wikipedia/commons/8/81/Sky_over_Washington_Monument.JPG');
