@@ -3,7 +3,7 @@ main {
 	padding: 1rem 0;
 	align-self: center;
 	transition: transform 800ms;
-	font-family: Ubuntu;
+	font-family: "Roboto";
 	background-image: linear-gradient(rgba(20, 20, 20, 0.6), rgba(80, 80, 80, 0.8), rgba(20, 20, 20, 0.6));
 }
 main:empty {
