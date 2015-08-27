@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="loading">
 	<head>
 		<meta charset="utf-8">
 		<title>Local Weather</title>
@@ -11,7 +11,10 @@
 		<header>
 			<h1>Free Code Camp Zipline</h1>
 			<h2>Local Weather App</h2>
-			<button type="button" id="switch-units">Switch Units</button>
+			<div>
+				<button type="button" class="toggle" data-value="metric" disabled>Celsius</button>
+				<button type="button" class="toggle" data-value="imperial" disabled>Fahrenheit</button>
+			</div>
 		</header>
 		<main></main>
 		<footer>
