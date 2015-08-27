@@ -30,6 +30,10 @@
 	--cond-rain: url('https://upload.wikimedia.org/wikipedia/commons/e/e2/Rain_ot_ocean_beach.jpg');
 	--cond-ligntniing: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Cloud-to-ground_lightning2_-_NOAA.jpg/1280px-Cloud-to-ground_lightning2_-_NOAA.jpg');
 	--cond-snow: url('https://static.pexels.com/photos/6672/snow-forest-trees-winter.jpeg');
+	--frosted-glass: linear-gradient(rgba(240, 240, 240, 0.7), rgba(200, 200, 200, 0.6));
+}
+* {
+	box-sizing: inherit;
 }
 body {
 	min-height: 100vh;
@@ -37,4 +41,8 @@ body {
 	background-position: bottom center;
 	display: flex;
 	flex-wrap: wrap;
+	box-sizing: border-box;
+}
+button:disabled, [role="button"]:disabled {
+	cursor: not-allowed;
 }
