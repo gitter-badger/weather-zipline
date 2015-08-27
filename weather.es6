@@ -20,7 +20,7 @@ class OpenWeatherMap {
 			this.units.speed = 'MPH';
 		} else if (units === 'metric') {
 			this.units.temp = 'C';
-			this.units.speed = 'K/H';
+			this.units.speed = 'M/S';
 		}
 	}
 
