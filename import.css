@@ -6,7 +6,7 @@
 @import "footer.css";
 @import "class_rules.css";
 @import "weather.css";
-@import url("https://fonts.googleapis.com/css?family=Acme|Roboto");
+@import url("https://fonts.googleapis.com/css?family=Oxygen|Roboto");
 
 @media screen and (min-width:1000px) {
 	:root {
