@@ -22,6 +22,7 @@
 }
 .toggle:first-of-type {
 	border-radius: 0.5rem 0 0 0.5rem;
+	margin-right: -0.17em;
 }
 .toggle:last-of-type {
 	border-radius: 0 0.5rem 0.5rem 0;
