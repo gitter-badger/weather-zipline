@@ -1,3 +1,6 @@
+.loading {
+	cursor: progress;
+}
 .flex {
 	display: flex;
 }
@@ -8,7 +11,7 @@
 }
 .tile {
 	display: inline-block;
-	background-image: linear-gradient(rgba(240, 240, 240, 0.7), rgba(200, 200, 200, 0.6));
+	background-image: var(--frosted-glass);
 	padding: 1.2em;
 	margin: 0.3em;
 	box-shadow: 0.3em 0.3em 0.3em black;
@@ -16,4 +19,23 @@
 }
 .temp {
 	color: var(--color-alt);
+}
+.toggle:first-of-type {
+	border-radius: 0.5rem 0 0 0.5rem;
+}
+.toggle:last-of-type {
+	border-radius: 0 0.5rem 0.5rem 0;
+}
+.toggle {
+	display: inline-block;
+	padding: 0.3rem;
+	border: 0.1em outset #333;
+	background-image: linear-gradient(#C6C2C2, #838383);
+	text-shadow: 0.05em 0.05em 0.1em black;
+	transition: box-shadow 100ms;
+}
+.toggle:disabled {
+	background-image: linear-gradient(#AEAEAE, #686868);
+	border: 0.1em inset #333;
+	box-shadow: 0.1em 0.1em 0.1em black inset;
 }
