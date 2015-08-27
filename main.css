@@ -1,11 +1,16 @@
 main {
-	flex: 0 0 100%;
+	flex: 0 0 50%;
 	padding: 1rem 0;
 	align-self: baseline;
-	transition: transform 800ms;
 	font-family: "Roboto";
-	background-image: linear-gradient(rgba(20, 20, 20, 0.6), rgba(80, 80, 80, 0.8), rgba(20, 20, 20, 0.6));
+	background-image: linear-gradient(rgba(20, 20, 20, 0.7), rgba(80, 80, 80, 0.9) 85%, rgba(20, 20, 20, 0.7));
+	border-radius: 1em;
+	box-shadow: 0.5em 0.5em 1em black;
+	transform-origin: center;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	transition: transform 1800ms;
 }
 main:empty {
-	transform: scale(0);
+	transform: scale(0) rotateX(180deg);
 }

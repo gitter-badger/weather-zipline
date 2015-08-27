@@ -42,7 +42,9 @@ body {
 	background-position: bottom center;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	box-sizing: border-box;
+	perspective: 1000px;
 }
 button:disabled, [role="button"]:disabled {
 	cursor: not-allowed;
