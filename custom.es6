@@ -1,3 +1,9 @@
+NodeList.prototype.filter = Array.prototype.filter;
+NodeList.prototype.forEach = Array.prototype.forEach;
+NodeList.prototype.map = Array.prototype.map;
+function $(selector) {
+	return document.querySelectorAll(selector);
+}
 function updateWeather() {
 	var weather = new OpenWeatherMap(localStorage.getItem('units'));
 	var main = document.querySelector('main');
@@ -33,20 +39,26 @@ function updateWeather() {
 }
 
 window.addEventListener('load', () => {
+	document.documentElement.classList.remove('loading');
 	if (!localStorage.hasOwnProperty('units')) {
 		localStorage.setItem('units', 'imperial');
 	}
-	document.getElementById('switch-units').addEventListener('click', event => {
-		switch (localStorage.getItem('units')) {
-			case 'imperial':
-				localStorage.setItem('units', 'metric');
-				break;
-
-			case 'metric':
-				localStorage.setItem('units', 'imperial');
-				break;
-		}
-		updateWeather();
+	$('.toggle').map(button => {
+		button.addEventListener('click', event => {
+			event.target.disabled = true;
+			localStorage.setItem('units', event.target.dataset.value);
+			updateWeather();
+			event.target.parentElement.querySelectorAll('.toggle').filter(toggle => {
+				return toggle !== event.target;
+			}).forEach(btn => {
+				btn.disabled = false;
+			});
+		});
+		return button;
+	}).filter(button => {
+		return button.dataset.value !== localStorage.getItem('units');
+	}).forEach(button => {
+		button.disabled = false;
 	});
 	updateWeather();
 });
