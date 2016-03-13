@@ -1,5 +1,5 @@
 {
-  "name": "Weather Zipline",
+  "name": "Weather-Zipline",
   "version": "0.0.1",
   "description": "A weather app for FreeCodeCamp using OpenWeatherMap",
   "keywords": ["weather", "FreeCodeCamp", "zipline", "OpenWeatherMap", "ECMAScript 2015", "es6"],
