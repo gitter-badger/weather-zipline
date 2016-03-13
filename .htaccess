@@ -1,25 +1,25 @@
 Options -Indexes +SymLinksIfOwnerMatch
-
-<IfModule php5_module>
-	DirectoryIndex index.php
-	php_value auto_prepend_file ./autoloader.php
-	php_flag display_startup_errors on
-	php_flag display_errors on
-	php_flag html_errors on
-	php_flag log_errors on
-	<IfModule env_module>
-		SetEnv MIN_PHP_VERSION 5.5
-		SetEnv CONFIG_DIR config
-		SetEnv COMPONENTS_DIR components
-		SetEnv AUTOLOAD_DIR classes
-		SetEnv AUTOLOAD_EXTS .php
-		SetEnv AUTOLOAD_FUNC spl_autoload
-		SetEnv AUTOLOAD_SCRIPT ./autoloader.php
-	</IfModule>
-</IfModule>
-<IfModule !php5_module>
-	DirectoryIndex index.html
-</IfModule>
+DirectoryIndex index.html
+# <IfModule php5_module>
+# 	DirectoryIndex index.php
+# 	php_value auto_prepend_file ./autoloader.php
+# 	php_flag display_startup_errors on
+# 	php_flag display_errors on
+# 	php_flag html_errors on
+# 	php_flag log_errors on
+# 	<IfModule env_module>
+# 		SetEnv MIN_PHP_VERSION 5.5
+# 		SetEnv CONFIG_DIR config
+# 		SetEnv COMPONENTS_DIR components
+# 		SetEnv AUTOLOAD_DIR classes
+# 		SetEnv AUTOLOAD_EXTS .php
+# 		SetEnv AUTOLOAD_FUNC spl_autoload
+# 		SetEnv AUTOLOAD_SCRIPT ./autoloader.php
+# 	</IfModule>
+# </IfModule>
+# <IfModule !php5_module>
+# 	DirectoryIndex index.html
+# </IfModule>
 #Configure PHP's autoloader and set include_path, min PHP version
 <IfModule headers_module>
 	Header set X-Frame-Options "SAMEORIGIN"
@@ -28,7 +28,7 @@ Options -Indexes +SymLinksIfOwnerMatch
 	Header set Cache-Control "public, must-revalidate, proxy-revalidate, no-transform"
 	Header set X-UA-Compatible "IE=edge,chrome=1"
 	Header set Connection "Keep-Alive"
-	Header set Content-Security-Policy "default-src 'self'; img-src 'self' https://travis-ci.org https://api.travis-ci.org https://badges.gitter.im https://i.imgur.com"
+	# Header set Content-Security-Policy "default-src 'self'; img-src 'self' https://travis-ci.org https://api.travis-ci.org https://badges.gitter.im https://i.imgur.com"
 	# `mod_headers` can't match based on the content-type, however, we only
 	# want to send this header for HTML pages and not for the other resources
 	<FilesMatch "\.(appcache|crx|css|eot|gif|htc|ico|jpe?g|js|m4a|m4v|manifest|mp4|oex|oga|ogg|ogv|otf|pdf|png|safariextz|svg|svgz|ttf|vcf|webapp|webm|webp|woff2?|xml|xpi)$">
