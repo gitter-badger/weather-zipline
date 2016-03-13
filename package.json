@@ -30,7 +30,7 @@
     "lint:js": "eslint  --ext .es6 .",
     "lint:php": "php unit.php",
     "update": "git submodule update --init --recursive && npm run build:all",
-    "test": "npm run lint:php && npm run lint:js",
+    "test-samp": "npm run lint:php && npm run lint:js",
     "hook:pre-commit": "cp .git/hooks/pre-commit.sample .git/hooks/pre-commit && chmod u+x .git/hooks/pre-commit",
     "hook:post-merge": "touch .git/hooks/post-merge && echo '#!/bin/sh' > .git/hooks/post-merge && echo 'npm run update' >> .git/hooks/post-merge && chmod u+x .git/hooks/post-merge",
     "hook:pre-push": "touch .git/hooks/pre-push && echo '#!/bin/sh' > .git/hooks/pre-push && echo 'npm test' >> .git/hooks/pre-push && chmod u+x .git/hooks/pre-push",
