@@ -7,6 +7,7 @@
 *.orig
 Thumbs.db
 /node_modules/
+/images/icons.svg
 /scripts/custom.js
 /scripts/custom.js.map
 /stylesheets/styles/styles.css
