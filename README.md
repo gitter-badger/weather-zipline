@@ -1,9 +1,11 @@
-[example]: http://codepen.io/AdventureBear/full/yNBJRj
-[zipline]: http://freecodecamp.com/challenges/zipline-show-the-local-weather
-[screenshot]: https://i.imgur.com/R6IKGWc.jpg
+# [Zipline: Show the Local Weather](http://freecodecamp.com/challenges/zipline-show-the-local-weather)
 
-# [Zipline: Show the Local Weather][zipline]
-- Build a CodePen.io app that successfully reverse-engineers [this][example] ![Screen Shot][screenshot]
+[![Build Status](https://travis-ci.org/shgysk8zer0/weather-zipline.svg?branch=master)](https://travis-ci.org/KVSun/ad-insertion)
+
+- Build a CodePen.io app that successfully reverse-engineers [this](http://codepen.io/AdventureBear/full/yNBJRj)
+
+![Screen Shot](https://i.imgur.com/R6IKGWc.jpg)
+
 - Rule #1: Don't look at the example project's code on CodePen. Figure it out for yourself.
 - Rule #2: You may use whichever libraries or APIs you need
 - Rule #3: Reverse engineer the example project's functionality, and also feel free to personalize it.
