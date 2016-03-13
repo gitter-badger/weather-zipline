@@ -1,8 +1,9 @@
 import {default as $} from './std-js/zq.es6';
 import OpenWeatherMap from './std-js/openweathermap.es6';
+import APPID from './OpenWeatherMapAppID.es6';
 
 function updateWeather() {
-	var weather = new OpenWeatherMap(localStorage.getItem('units'));
+	var weather = new OpenWeatherMap(APPID, localStorage.getItem('units'));
 	var main = document.querySelector('main');
 	while (main.hasChildNodes()) {
 		main.firstChild.remove();
