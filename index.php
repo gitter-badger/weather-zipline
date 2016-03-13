@@ -5,14 +5,16 @@ namespace Index;
 use \shgysk8zer0\Core as Core;
 use \shgysk8zer0\DOM as DOM;
 
-const PACKAGE = './package.json';
-const JS      = 'scripts/custom.js';
-const CSS     = 'stylesheets/styles/styles.css';
+const PACKAGE   = './package.json';
+const JS        = 'scripts/custom.js';
+const CSS       = 'stylesheets/styles/styles.css';
+const BTNWIDTH  = 50;
+const BTNHEIGHT = 50;
 
 spl_autoload_register('spl_autoload');
 set_include_path(realpath('./classes'));
 
-function build_head(\DOMElement $head)
+function build_head(\DOMElement $head, \stdClass $json)
 {
 	$json = json_decode(file_get_contents(PACKAGE));
 	$head->append('title', $json->name);
@@ -30,7 +32,7 @@ function build_head(\DOMElement $head)
 	]);
 }
 
-function build_body(\DOMElement $body)
+function build_body(\DOMElement $body, \stdClass $json)
 {
 	$header = $body->append('header');
 	$header->append('h1', 'Your Local Weather');
@@ -50,15 +52,29 @@ function build_body(\DOMElement $body)
 	unset($header, $container);
 
 	$body->append('main');
-	$body->append('footer', '&copy; ' . date('Y'));
+	$footer = $body->append('footer');
+	$footer->append('a', null, [
+		'role' => 'button',
+		'href' => $json->repository->url,
+		'target' => '_blank',
+		'title' => 'View on GitHub'
+	])->import(DOM\SVG::useIcon('mark-github', ['width' => BTNWIDTH, 'height' => BTNHEIGHT]));
+
+	$footer->append('a', null, [
+		'role' => 'button',
+		'href' => $json->bugs->url,
+		'target' => '_blank',
+		'title' => 'View Issues'
+	])->import(DOM\SVG::useIcon('issue-opened', ['width' => BTNWIDTH, 'height' => BTNHEIGHT]));
 }
 
 function init()
 {
 	$dom = DOM\HTML::getInstance();
 	$dom->documentElement->class = 'loading';
-	build_head($dom->head);
-	build_body($dom->body);
+	$json = json_decode(file_get_contents(PACKAGE));
+	build_head($dom->head, $json);
+	build_body($dom->body, $json);
 	return $dom;
 }
 exit(init());
