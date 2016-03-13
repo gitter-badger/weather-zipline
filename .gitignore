@@ -6,6 +6,7 @@
 *.log
 *.orig
 Thumbs.db
+/node_modules/
 
 #################
 ## Eclipse
