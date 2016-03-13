@@ -1,5 +1,7 @@
 # [Zipline: Show the Local Weather](http://freecodecamp.com/challenges/zipline-show-the-local-weather)
 
+[![Join the chat at https://gitter.im/shgysk8zer0/weather-zipline](https://badges.gitter.im/shgysk8zer0/weather-zipline.svg)](https://gitter.im/shgysk8zer0/weather-zipline?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/shgysk8zer0/weather-zipline.svg?branch=master)](https://travis-ci.org/KVSun/ad-insertion)
 
 - Build a CodePen.io app that successfully reverse-engineers [this](http://codepen.io/AdventureBear/full/yNBJRj)
