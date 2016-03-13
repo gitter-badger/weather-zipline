@@ -2,6 +2,7 @@
 @import url("../core-css/viewport.css");
 @import url("viewport.css");
 @import url("vars.css");
+@import url("root.css");
 @import url("../normalize/normalize.css");
 @import url("../core-css/fonts.css");
 @import url("../core-css/animations.css") screen;
@@ -17,36 +18,5 @@
 @import url("footer.css");
 @import url("weather.css");
 @import url("misc.css");
+@import url("button.css");
 @import url("https://fonts.googleapis.com/css?family=Oxygen|Roboto");
-
-@media screen and (min-width:1000px) {
-	:root {
-		font-size: 1.3vw;
-	}
-}
-@media screen and (max-width:999px) and (min-width:500px) {
-	:root {
-		font-size: 2vw;
-	}
-}
-@media screen and (max-width: 499px) {
-	:root {
-		font-size: 3vw;
-	}
-}
-* {
-	box-sizing: inherit;
-}
-body {
-	min-height: 100vh;
-	background-size: cover;
-	background-position: bottom center;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	box-sizing: border-box;
-	perspective: 1000px;
-}
-button:disabled, [role="button"]:disabled {
-	cursor: not-allowed;
-}

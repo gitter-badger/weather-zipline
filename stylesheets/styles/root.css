@@ -1,0 +1,19 @@
+:root {
+	background-image: var(--main-bg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: var(--default-color);
+	text-shadow: var(--shadow);
+	cursor: var(--default-cursor);
+}
+body {
+	min-height: 100vh;
+	background-size: cover;
+	background-position: bottom center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	box-sizing: border-box;
+	perspective: 1000px;
+}

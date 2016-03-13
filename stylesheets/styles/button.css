@@ -1,0 +1,6 @@
+[role="button"] {
+	display: inline-block;
+}
+button:disabled, [role="button"]:disabled {
+	cursor: not-allowed;
+}
